@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang() }}">
+<head>
+    {{ metatags() }}
+    {{ css_links() }}
+    {{ js_head_links() }}
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini{% if sidebar_collapsed %} sidebar-collapse{% endif %}">
+<div class="wrapper">
+    {% include 'admin_theme_lte@header' %}
+    {% include 'admin_theme_lte@sidebar' %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {{ metatag_get('title') }}
+                <small>{{ metatag_get('description') }}</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                <li class="active">Here</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content container-fluid">
+            {% include 'admin_theme_lte@messages' %}
+            {{ content }}
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    {% include 'admin_theme_lte@footer' %}
+</div>
+<!-- ./wrapper -->
+
+{{ js_links() }}
+{{ inline_js() }}
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "admin_theme_lte",
+  "version": "1.0",
+  "description": {
+    "en": "AdminLTE Theme",
+    "ru": "AdminLTE Theme",
+    "uk": "AdminLTE Theme"
+  },
+  "url": "https://github.com/pytsite/plugin-admin_theme_lte",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
+  "requires": {
+    "packages": [],
+    "plugins": [
+      "admin>=1.3",
+      "assetman",
+      "auth_ui",
+      "form",
+      "font_awesome",
+      "jquery",
+      "js_cookie",
+      "twitter_bootstrap",
+      "widget"
+    ]
+  }
+}
