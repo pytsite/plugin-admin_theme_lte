@@ -48,7 +48,7 @@ def plugin_load_uwsgi():
     assetman.preload(__name__ + '@AdminLTE/css/AdminLTE.css', True, path_prefix=bp)
     assetman.preload(__name__ + '@AdminLTE/css/skins/skin-blue.css', True, path_prefix=bp)
     assetman.preload(__name__ + '@css/custom.css', True, path_prefix=bp)
-    assetman.preload(__name__ + '@js/pytsite-admin.js', True, path_prefix=bp)
+    assetman.preload(__name__ + '@js/admin-theme-lte-loader.js', True, path_prefix=bp)
 
     # Register admin theme
     admin.register_theme(Theme())

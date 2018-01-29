@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.0.1 (2018-01-29)
+
+JS init code fixed.
+
+
 ### 1.0 (2018-01-26)
 
 First release.

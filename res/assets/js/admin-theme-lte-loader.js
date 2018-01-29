@@ -1,4 +1,4 @@
-require(['jquery', 'cookie', 'assetman', 'twitter-bootstrap', 'pytsite-admin-lte'], function ($, cookie) {
+require(['jquery', 'cookie', 'assetman', 'twitter-bootstrap', 'admin-theme-lte'], function ($, cookie) {
     $('.sidebar-toggle').click(function () {
         if ($('body').hasClass('sidebar-collapse'))
             cookie.remove('adminSidebarCollapsed');
