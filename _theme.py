@@ -6,8 +6,7 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 from typing import Union as _Union
-from pytsite import html as _html, tpl as _tpl, router as _router, package_info as _package_info, lang as _lang, \
-    reg as _reg
+from pytsite import html as _html, tpl as _tpl, router as _router, package_info as _package_info, lang as _lang
 from plugins import admin as _admin, widget as _widget
 
 
@@ -41,7 +40,7 @@ class Theme(_admin.Theme):
             # Building top level menu item
             for menu in menus[section['sid']]:
                 # Link
-                a = _html.A(href=menu['path'])
+                a = _html.A(href=_router.url(menu['path'], lang=_lang.get_current()))
 
                 # Icon
                 if menu['icon']:
