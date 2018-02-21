@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.0.3 (2018-02-21)
+
+Unused breadcrumb temporary disabled.
+
+
 ### 1.0.2 (2018-02-13)
 
 Localized sidebar's URLs fixed.
