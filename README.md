@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.1 (2018-03-28)
+
+Support of `auth_ui-2.4`.
+
+
 ### 1.0.3 (2018-02-21)
 
 Unused breadcrumb temporary disabled.

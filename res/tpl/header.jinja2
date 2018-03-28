@@ -1,4 +1,4 @@
-{% set user = auth_current_user() %}
+{% set user = plugins.auth.get_current_user() %}
 
 <!-- Main Header -->
 <header class="main-header">
@@ -51,7 +51,7 @@
                                 <a href="{{ user.url }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@profile') }}</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ auth_sign_out_url() }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@logout') }}</a>
+                                <a href="{{ plugins.auth_ui.sign_out_url() }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@logout') }}</a>
                             </div>
                         </li>
                     </ul>
