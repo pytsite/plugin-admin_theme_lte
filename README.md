@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.1.1 (2018-06-12)
+
+User picture rendering issue fixed.
+
+
 ### 1.1 (2018-03-28)
 
 Support of `auth_ui-2.4`.
