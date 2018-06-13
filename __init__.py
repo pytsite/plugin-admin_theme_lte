@@ -35,20 +35,11 @@ def plugin_load_uwsgi():
     """Hook
     """
     from pytsite import tpl
-    from plugins import assetman, admin
+    from plugins import admin
     from ._theme import Theme
 
     # Resources
     tpl.register_package(__name__)
-
-    # Assets
-    bp = admin.base_path()
-    assetman.preload('font-awesome', True, path_prefix=bp)
-    assetman.preload('twitter-bootstrap', True, path_prefix=bp)
-    assetman.preload(__name__ + '@AdminLTE/css/AdminLTE.css', True, path_prefix=bp)
-    assetman.preload(__name__ + '@AdminLTE/css/skins/skin-blue.css', True, path_prefix=bp)
-    assetman.preload(__name__ + '@css/custom.css', True, path_prefix=bp)
-    assetman.preload(__name__ + '@js/admin-theme-lte-loader.js', True, path_prefix=bp)
 
     # Register admin theme
     admin.register_theme(Theme())

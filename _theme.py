@@ -1,13 +1,12 @@
 """PytSite AdminLTE Theme Plugin
 """
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 from typing import Union as _Union
 from pytsite import html as _html, tpl as _tpl, router as _router, package_info as _package_info, lang as _lang
-from plugins import admin as _admin, widget as _widget
+from plugins import admin as _admin, widget as _widget, assetman as _assetman
 
 
 class Theme(_admin.Theme):
@@ -67,6 +66,13 @@ class Theme(_admin.Theme):
         return aside
 
     def render(self, navbar: _admin.NavBar, sidebar: _admin.SideBar, content: _Union[str, _html.Element]):
+        _assetman.preload('font-awesome')
+        _assetman.preload('twitter-bootstrap')
+        _assetman.preload('admin_theme_lte@AdminLTE/css/AdminLTE.css')
+        _assetman.preload('admin_theme_lte@AdminLTE/css/skins/skin-blue.css')
+        _assetman.preload('admin_theme_lte@css/custom.css')
+        _assetman.preload('admin_theme_lte@js/admin-theme-lte-loader.js')
+
         return _tpl.render('admin_theme_lte@html', {
             'admin_sidebar': self._render_sidebar(sidebar),
             'admin_language_nav': _widget.select.LanguageNav('admin-language-nav', dropdown=True),

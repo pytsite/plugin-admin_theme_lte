@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.2 (2018-06-13)
+
+Support of `assetman-1.7`.
+
+
 ### 1.1.1 (2018-06-12)
 
 User picture rendering issue fixed.
