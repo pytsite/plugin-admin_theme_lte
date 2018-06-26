@@ -2,8 +2,13 @@
 <html lang="{{ current_lang() }}">
 <head>
     {{ metatags() }}
-    {{ css_links() }}
-    {{ js_head_links() }}
+    {{ css_tags() }}
+    {{ css_tag('twitter-bootstrap-3') }}
+    {{ css_tag('font-awesome-4') }}
+    {{ css_tag('admin_theme_lte@AdminLTE/css/AdminLTE.css') }}
+    {{ css_tag('admin_theme_lte@AdminLTE/css/skins/skin-blue.css') }}
+    {{ css_tag('admin_theme_lte@css/custom.css') }}
+    {{ js_head_tags() }}
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini{% if sidebar_collapsed %} sidebar-collapse{% endif %}">
@@ -39,7 +44,8 @@
 </div>
 <!-- ./wrapper -->
 
-{{ js_links() }}
+{{ js_tags() }}
+{{ js_tag('admin_theme_lte@js/admin-theme-lte-loader.js') }}
 {{ inline_js() }}
 </body>
 </html>

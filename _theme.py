@@ -66,13 +66,6 @@ class Theme(_admin.Theme):
         return aside
 
     def render(self, navbar: _admin.NavBar, sidebar: _admin.SideBar, content: _Union[str, _html.Element]):
-        _assetman.preload('font-awesome')
-        _assetman.preload('twitter-bootstrap')
-        _assetman.preload('admin_theme_lte@AdminLTE/css/AdminLTE.css')
-        _assetman.preload('admin_theme_lte@AdminLTE/css/skins/skin-blue.css')
-        _assetman.preload('admin_theme_lte@css/custom.css')
-        _assetman.preload('admin_theme_lte@js/admin-theme-lte-loader.js')
-
         return _tpl.render('admin_theme_lte@html', {
             'admin_sidebar': self._render_sidebar(sidebar),
             'admin_language_nav': _widget.select.LanguageNav('admin-language-nav', dropdown=True),

@@ -1,6 +1,6 @@
 {
   "name": "admin_theme_lte",
-  "version": "1.2",
+  "version": "1.3",
   "description": {
     "en": "AdminLTE Theme",
     "ru": "AdminLTE Theme",
@@ -15,13 +15,13 @@
   "requires": {
     "plugins": [
       "admin>=1.3",
-      "assetman>=1.7",
+      "assetman>=2.0",
       "auth_ui>=2.4",
       "form",
-      "font_awesome",
+      "font_awesome>=2.0",
       "jquery",
       "js_cookie",
-      "twitter_bootstrap",
+      "twitter_bootstrap>=1.3",
       "widget"
     ]
   }
