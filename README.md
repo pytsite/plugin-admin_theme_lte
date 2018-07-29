@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.4 (2018-07-29)
+
+Helper CSS class added to the root of all pages.
+
+
 ### 1.3 (2018-06-26)
 
 Support of `assetman-2.0`.
