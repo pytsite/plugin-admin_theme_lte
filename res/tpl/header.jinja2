@@ -35,7 +35,7 @@
                         {% else %}
                             <img alt="{{ user.full_name | e }}" class="user-image" src="https://www.gravatar.com/avatar/00000000000000000000000000000000">
                         {% endif %}
-                        <span>{{ user.full_name }}</span>
+                        <span>{{ user.first_name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -47,7 +47,7 @@
                             {% endif %}
 
                             <p>
-                                {{ user.full_name }}
+                                {{ user.first_last_name }}
                                 <small>{{ user.login }}</small>
                                 <small>{{ t('admin_theme_lte@member_since') }} {{ user.created | date('pretty_date') }}</small>
                             </p>
@@ -56,10 +56,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{ user.url }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@profile') }}</a>
+                                <a href="{{ rule_url('auth_ui@user_profile_view', {'nickname': user.nickname}) }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@profile') }}</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ plugins.auth_ui.sign_out_url() }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@logout') }}</a>
+                                <a href="{{ plugins.auth_ui.sign_out_url(None) }}" class="btn btn-default btn-flat">{{ t('admin_theme_lte@logout') }}</a>
                             </div>
                         </li>
                     </ul>

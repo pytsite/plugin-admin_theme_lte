@@ -1,6 +1,6 @@
 {
   "name": "admin_theme_lte",
-  "version": "1.4",
+  "version": "1.5",
   "description": {
     "en": "AdminLTE Theme",
     "ru": "AdminLTE Theme",
@@ -16,7 +16,7 @@
     "plugins": [
       "admin>=1.3",
       "assetman>=2.0",
-      "auth_ui>=2.4",
+      "auth_ui>=3.16",
       "form",
       "font_awesome>=2.0",
       "jquery",

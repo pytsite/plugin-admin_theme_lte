@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.5 (2018-08-10)
+
+Support of `auth_ui-3.16`.
+
+
 ### 1.4 (2018-07-29)
 
 Helper CSS class added to the root of all pages.
