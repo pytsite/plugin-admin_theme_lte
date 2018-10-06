@@ -4,6 +4,12 @@
 ## Changelog
 
 
+### 2.0 (2018-10-06)
+
+Support of `pytsite-8.x`, `admin-2.x`, `assetman-3.x`, `form-5.x`,
+`widget-3.x`.
+
+
 ### 1.5 (2018-08-10)
 
 Support of `auth_ui-3.16`.

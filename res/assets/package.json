@@ -1,0 +1,11 @@
+{
+  "name": "@pytsite/admin-theme-lte",
+  "main": "index.js",
+  "dependencies": {
+    "@pytsite/bootstrap": "1.x",
+    "font-awesome": "4.x",
+    "jquery": "3.x",
+    "js-cookie": "2.x",
+    "webpack-merge": "4.x"
+  }
+}

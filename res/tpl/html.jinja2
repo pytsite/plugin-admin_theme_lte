@@ -3,11 +3,7 @@
 <head>
     {{ metatags() }}
     {{ css_tags() }}
-    {{ css_tag('twitter-bootstrap-3') }}
-    {{ css_tag('font-awesome-4') }}
-    {{ css_tag('admin_theme_lte@AdminLTE/css/AdminLTE.css') }}
-    {{ css_tag('admin_theme_lte@AdminLTE/css/skins/skin-blue.css') }}
-    {{ css_tag('admin_theme_lte@css/custom.css') }}
+    {{ css_tag('admin_theme_lte@main.css') }}
     {{ js_head_tags() }}
 </head>
 
@@ -39,13 +35,12 @@
     </div>
     <!-- /.content-wrapper -->
 
-
     {% include 'admin_theme_lte@footer' %}
 </div>
 <!-- ./wrapper -->
 
 {{ js_tags() }}
-{{ js_tag('admin_theme_lte@js/admin-theme-lte-loader.js') }}
+{{ js_tag('admin_theme_lte@main.js') }}
 {{ inline_js() }}
 </body>
 </html>
