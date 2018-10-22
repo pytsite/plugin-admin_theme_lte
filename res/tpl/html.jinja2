@@ -2,6 +2,7 @@
 <html lang="{{ current_lang() }}">
 <head>
     {{ metatags() }}
+    {{ css('admin_theme_lte@vendors~main.css') }}
     {{ css('admin_theme_lte@main.css') }}
 </head>
 
@@ -37,6 +38,7 @@
 </div>
 <!-- ./wrapper -->
 
+{{ js('admin_theme_lte@vendors~main.js') }}
 {{ js('admin_theme_lte@main.js') }}
 {{ inline_js() }}
 </body>

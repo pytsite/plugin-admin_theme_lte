@@ -6,9 +6,8 @@ import './AdminLTE/css/AdminLTE.css';
 import './AdminLTE/css/skins/skin-blue.css';
 import './css/custom.scss';
 import './AdminLTE/js/app.js';
-
-const $ = require('jquery');
-const cookie = require('js-cookie');
+import $ from 'jquery';
+import cookie from 'js-cookie';
 
 $('.sidebar-toggle').click(function () {
     if ($('body').hasClass('sidebar-collapse'))
