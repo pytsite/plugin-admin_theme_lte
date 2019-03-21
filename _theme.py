@@ -68,7 +68,7 @@ class Theme(_admin.Theme):
     def render(self, navbar: _admin.NavBar, sidebar: _admin.SideBar, content: _Union[str, _html.Element]):
         return _tpl.render('admin_theme_lte@html', {
             'admin_sidebar': self._render_sidebar(sidebar),
-            'admin_language_nav': _widget.select.LanguageNav('admin-language-nav', dropdown=True),
+            'admin_language_nav': _widget.select.LanguageNav('admin-language-nav', dropdown=True, bs_version=3),
             'content': content,
             'core_name': _package_info.name('pytsite'),
             'core_url': _package_info.url('pytsite'),

@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 2.3 (2019-03-21)
+
+Support of `widget-4.15`.
+
+
 ### 2.2.1 (2018-10-29)
 
 Automatic assets building fixed.
