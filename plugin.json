@@ -1,6 +1,6 @@
 {
   "name": "admin_theme_lte",
-  "version": "2.3",
+  "version": "2.4",
   "description": {
     "en": "AdminLTE Theme",
     "ru": "AdminLTE Theme",
@@ -16,7 +16,7 @@
     "pytsite": ">=8.9",
     "plugins": {
       "admin": "^2.0",
-      "assetman": "^5.0",
+      "assetman": "^5.2",
       "auth_ui": "^4.0",
       "form": "^5.0",
       "widget": "^4.15"

@@ -5,12 +5,6 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def _build_assets():
-    from plugins import assetman
-
-    assetman.build(__name__)
-
-
 def plugin_load_wsgi():
     """Hook
     """
@@ -19,7 +13,3 @@ def plugin_load_wsgi():
 
     # Register admin theme
     admin.register_theme(Theme())
-
-
-def plugin_install():
-    _build_assets()

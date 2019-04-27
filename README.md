@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 2.4 (2019-04-27)
+
+Support of `assetman-5.2`.
+
+
 ### 2.3 (2019-03-21)
 
 Support of `widget-4.15`.
