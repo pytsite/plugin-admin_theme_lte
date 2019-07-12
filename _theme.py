@@ -4,12 +4,13 @@ __author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-from typing import Union as _Union
-from pytsite import html as _html, tpl as _tpl, router as _router, package_info as _package_info, lang as _lang
-from plugins import admin as _admin, widget as _widget, assetman as _assetman
+import htmler
+from typing import Union
+from pytsite import tpl, router, package_info, lang
+from plugins import admin, widget
 
 
-class Theme(_admin.Theme):
+class Theme(admin.Theme):
     @property
     def name(self):
         return 'lte'
@@ -19,59 +20,59 @@ class Theme(_admin.Theme):
         return 'AdminLTE'
 
     @staticmethod
-    def _render_sidebar(sidebar: _admin.SideBar) -> _html.Aside:
+    def _render_sidebar(sidebar: admin.SideBar) -> htmler.Aside:
         """Render admin's sidebar
         """
-        aside = _html.Aside(css='main-sidebar')
-        sidebar_section_em = _html.Section(css='sidebar')
-        aside.append(sidebar_section_em)
+        aside = htmler.Aside(css='main-sidebar')
+        sidebar_section_em = htmler.Section(css='sidebar')
+        aside.append_child(sidebar_section_em)
 
-        root_menu_ul = _html.Ul(css='sidebar-menu')
-        sidebar_section_em.append(root_menu_ul)
+        root_menu_ul = htmler.Ul(css='sidebar-menu')
+        sidebar_section_em.append_child(root_menu_ul)
 
         sections, menus = sidebar.items
 
         # Do actual rendering
         for section in sections:
-            li = _html.Li(_lang.t(section['title']), css='header', data_section_weight=section['weight'])
-            root_menu_ul.append(li)
+            li = htmler.Li(lang.t(section['title']), css='header', data_section_weight=section['weight'])
+            root_menu_ul.append_child(li)
 
             # Building top level menu item
             for menu in menus[section['sid']]:
                 # Link
-                a = _html.A(href=_router.url(menu['path'], lang=_lang.get_current()))
+                a = htmler.A(href=router.url(menu['path'], lang=lang.get_current()))
 
                 # Icon
                 if menu['icon']:
-                    a.append(_html.I(css=menu['icon']))
+                    a.append_child(htmler.I(css=menu['icon']))
 
                 # Title
-                a.append(_html.Span(_lang.t(menu['title'])))
+                a.append_child(htmler.Span(lang.t(menu['title'])))
 
                 # Label
                 if menu['label']:
                     label_class = 'label pull-right label-' + menu['label_class']
-                    a.append(_html.Span(_lang.t(menu['label']), css=label_class))
+                    a.append_child(htmler.Span(lang.t(menu['label']), css=label_class))
 
                 # List element
-                li = _html.Li(data_menu_weight=menu['weight'])
+                li = htmler.Li(data_menu_weight=menu['weight'])
 
                 # Active state
                 if menu['active']:
                     li.set_attr('css', 'active')
 
-                li.append(a)
-                root_menu_ul.append(li)
+                li.append_child(a)
+                root_menu_ul.append_child(li)
 
         return aside
 
-    def render(self, navbar: _admin.NavBar, sidebar: _admin.SideBar, content: _Union[str, _html.Element]):
-        return _tpl.render('admin_theme_lte@html', {
+    def render(self, navbar: admin.NavBar, sidebar: admin.SideBar, content: Union[str, htmler.Element]):
+        return tpl.render('admin_theme_lte@html', {
             'admin_sidebar': self._render_sidebar(sidebar),
-            'admin_language_nav': _widget.select.LanguageNav('admin-language-nav', dropdown=True, bs_version=3),
+            'admin_language_nav': widget.select.LanguageNav('admin-language-nav', dropdown=True, bs_version=3),
             'content': content,
-            'core_name': _package_info.name('pytsite'),
-            'core_url': _package_info.url('pytsite'),
-            'core_version': _package_info.version('pytsite'),
-            'sidebar_collapsed': _router.request().cookies.get('adminSidebarCollapsed') is not None,
+            'core_name': package_info.name('pytsite'),
+            'core_url': package_info.url('pytsite'),
+            'core_version': package_info.version('pytsite'),
+            'sidebar_collapsed': router.request().cookies.get('adminSidebarCollapsed') is not None,
         })
